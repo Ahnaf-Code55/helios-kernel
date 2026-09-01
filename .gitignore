@@ -1,0 +1,18 @@
+# Build output
+helios-kernel-out/
+helios-kernel-src/
+
+# Build artifacts
+*.img
+*.gz
+*.lz4
+*.bin
+*.ko
+*.dtb
+
+# Config (contains device-specific settings)
+config/device.env
+.env
+
+# Kernel toolchains
+toolchains/
