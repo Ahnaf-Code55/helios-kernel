@@ -16,3 +16,4 @@ config/device.env
 
 # Kernel toolchains
 toolchains/
+AGENTS.md
