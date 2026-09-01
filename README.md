@@ -1,4 +1,5 @@
 # Helios-Kernel
+**Developer: Ahnaf Hossain**
 
 **A kernel built for the kind of phone use that actually matters — snappy response, longer screen-on time, and thermal headroom when you need it.**
 
@@ -211,6 +212,12 @@ Your ROM's vendor modules (which were built with Clang and have KCFI instrumenta
 
 ### v1.0 — **DO NOT USE**
 - Built from the wrong SoC. SM8550 != SM8650. Flashing it on a OnePlus 12 will leave you with a phone that won't boot.
+
+---
+
+## Developer
+
+**Ahnaf Hossain** — [GitHub](https://github.com/Ahnaf-Code55)
 
 ---
 
