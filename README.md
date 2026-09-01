@@ -75,12 +75,12 @@ The GKI (Generic Kernel Image) architecture keeps the kernel ABI stable across R
 
 ### Method A — Recovery Zip (Recommended)
 
-1. Download `Helios-Kernel-v1.1-waffle.zip` from the [Releases](https://github.com/Ahnaf-Code55/helios-kernel/releases) page
+1. Download `Helios-Kernel-v1.2-waffle.zip` from the [Releases](https://github.com/Ahnaf-Code55/helios-kernel/releases) page
 2. Boot into TWRP / OrangeFox / LineageOS recovery
 3. Flash the zip via recovery's Install menu or:
    ```bash
-   adb push Helios-Kernel-v1.1-waffle.zip /sdcard/
-   adb shell twrp install /sdcard/Helios-Kernel-v1.1-waffle.zip
+   adb push Helios-Kernel-v1.2-waffle.zip /sdcard/
+   adb shell twrp install /sdcard/Helios-Kernel-v1.2-waffle.zip
    ```
 4. Reboot. First boot may take a few minutes — let it settle.
 
