@@ -69,7 +69,7 @@ The kernel uses the **GKI (Generic Kernel Image)** architecture. The `Image` is 
 
 ### Method A — Recovery Zip (Recommended)
 
-1. Download `Helios-Kernel-v1.1-waffle.zip` from the [Releases](https://github.com/ifatroman55-code/helios-kernel/releases) page
+1. Download `Helios-Kernel-v1.1-waffle.zip` from the [Releases](https://github.com/Ahnaf-Code55/helios-kernel/releases) page
 2. Boot into TWRP / OrangeFox / LineageOS recovery
 3. Flash the zip via recovery's Install menu or:
    ```bash
@@ -116,7 +116,7 @@ Slot switching after an OTA may revert you to the stock kernel. Re-flash the zip
 
 ## Known Issues
 
-- **First stable release** — limited real-world testing. Report issues at the [GitHub tracker](https://github.com/ifatroman55-code/helios-kernel/issues).
+- **First stable release** — limited real-world testing. Report issues at the [GitHub tracker](https://github.com/Ahnaf-Code55/helios-kernel/issues).
 - **Vendor module compatibility is assumed, not guaranteed** — same lineage-23.2 source lineage as LineageOS 22.2 vendor modules; symbols should align, but camera/touch/NFC/vendor HAL quirks are possible.
 - If you experience touch, display, sensors, or Wi-Fi issues, try re-flashing the stock `dtbo` from your ROM before reporting:
   ```bash
