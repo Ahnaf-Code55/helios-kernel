@@ -8,7 +8,7 @@
 
 Helios-Kernel is a custom kernel for the OnePlus 12 that cuts out the debug overhead that runs in the background and wastes battery, leaving the performance paths clean. No gimmicks, no excessive tuning.
 
-v1.0 used the wrong source tree (SM8550 / OnePlus 12R). That one does not boot on the OnePlus 12. Discard it.
+This is the first correct build. v1.0 used the wrong source tree (SM8550 / OnePlus 12R). That one does not boot on the OnePlus 12. Discard it.
 
 ---
 
@@ -121,7 +121,17 @@ If you are switching from a different custom kernel, a clean flash is the safest
 | [Image](https://github.com/Ahnaf-Code55/helios-kernel/releases/download/v1.1/Image) | Raw kernel image (26 MB) |
 | [dtbo.img](https://github.com/Ahnaf-Code55/helios-kernel/releases/download/v1.1/dtbo.img) | Device-tree overlays (2.8 MB) |
 
-**Source:** https://github.com/Ahnaf-Code55/helios-kernel
+Also available on SourceForge:
+https://sourceforge.net/projects/helios-kernel/files/
+
+---
+
+## Support and Community
+
+- **GitHub Issues:** https://github.com/Ahnaf-Code55/helios-kernel/issues
+- **Telegram Channel:** @helios_kernel — official release announcements
+- **Telegram Testers:** https://t.me/+4ug12d5E3wNhZWJl
+- **Telegram Community:** @helioskernel_waffel
 
 ---
 
@@ -132,16 +142,6 @@ If you are switching from a different custom kernel, a clean flash is the safest
 - **osm0sis** — AnyKernel3
 - **TheMuppets** — proprietary vendor blobs
 - **CachyOS / Arch Linux** — build environment
-
----
-
-## Support
-
-- **GitHub Issues:** https://github.com/Ahnaf-Code55/helios-kernel/issues
-- **Helios-Kernel Testers** — link coming soon
-- **Helios-Kernel Community** — link coming soon
-
-If it works well for you, a reply helps. Bug reports with logs are better.
 
 ---
 
