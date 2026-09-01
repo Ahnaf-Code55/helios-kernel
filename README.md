@@ -60,6 +60,15 @@ The GKI (Generic Kernel Image) architecture keeps the kernel ABI stable across R
 | Debug info / debugfs | Drains battery for data you don't use in daily driver |
 | BTF metadata | Larger kernel image, more load-time overhead, host GCC compatibility issue |
 
+### What's New in v1.2 (2026-09-02)
+
+- **TCP BBR congestion control** — switched from CUBIC. BBR handles variable mobile connections and 5G better, with lower latency and more consistent throughput.
+- **KSM enabled** — kernel samepage merging deduplicates identical memory pages across processes. Useful when many apps share common data.
+- **ZSWAP + ZRAM writeback** — compressed memory pool writes to ZRAM first; when full, pages go to the writeback device instead of being dropped. Better memory pressure handling than ZRAM alone.
+- **MQ-Deadline I/O scheduler** — switched from BFQ. MQ-Deadline queues I/O requests by deadline, reducing storage latency on the UFS 4.0 drive.
+- **RCU boost delay reduced** — RCU is a kernel synchronization mechanism. Reducing the boost delay shortens wakeup latency for latency-sensitive tasks.
+- **Debug code stripped further** — more production-only debug code removed compared to v1.1.
+
 ---
 
 ## Quick Install
@@ -196,13 +205,21 @@ make O=/home/ahnaf/helios-kernel-out -j$(nproc) Image dtbs
 
 ## A Note on Security
 
-This kernel is built with GCC 16.1.0, not Clang. One consequence: KCFI (Kernel CFI) doesn't work in a GCC build — the compiler doesn't emit the type checks that Clang would. This means every indirect function call in the kernel gives up a layer of protection that the stock Clang-built kernel has. It's a trade-off, not a bug. Shadow Call Stack (SCS) is still enabled and working.
+This kernel is built with GCC 16.1.0, not Clang. One consequence: KCFI (Kernel CFI) doesn't work in a GCC build — the compiler doesn't emit the type checks that Clang would. This means every indirect function call in the kernel gives up a layer of protection that the stock Clang-built kernel has. It's a trade-off, not a bug. Shadow Call Stack (SCS) is still enabled and working, and that coverage remains unchanged from v1.1.
 
 Your ROM's vendor modules (which were built with Clang and have KCFI instrumentation baked in) will load and run normally against this kernel. When `CONFIG_CFI_CLANG=n`, the kernel simply ignores the KCFI data in those modules — no conflict, no crash risk. The reverse is what would be a problem: a KCFI-enabled kernel with non-KCFI modules.
 
 ---
 
 ## Changelog
+
+### v1.2 (2026-09-02)
+- TCP BBR congestion control (was CUBIC)
+- KSM enabled
+- ZSWAP + ZRAM writeback
+- MQ-Deadline I/O scheduler (was BFQ)
+- RCU boost delay reduced
+- Additional debug code removed
 
 ### v1.1 (2026-09-01)
 - First correct build for OnePlus 12. v1.0 used the wrong source tree (SM8550 / OnePlus 12R) — that one won't boot on OnePlus 12 and should be discarded.
